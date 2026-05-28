@@ -423,3 +423,39 @@
             ctx.fillRect(32, 10, 14, 24);
         }
         ctx.restore();
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>3D Surus Oyunu</title>
+    <style>
+        body { margin: 0; background: #111; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        .btn-container { display: flex; flex-direction: column; gap: 15px; width: 80%; }
+        button { padding: 20px; font-size: 20px; background: #222; color: white; border: 2px solid #444; border-radius: 10px; cursor: pointer; touch-action: manipulation; }
+        button.selected { background: #ff0055; border-color: #ff0055; }
+        #start-btn { background: #00ffcc; color: black; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>ARACINI SEC</h1>
+    <div class="btn-container">
+        <button id="car1" class="selected" onclick="selectCar(1)">Tesla</button>
+        <button id="car2" onclick="selectCar(2)">Cybertruck</button>
+        <button id="car3" onclick="selectCar(3)">Tır</button>
+        <button id="start-btn" onclick="başlat()">SÜRÜŞÜ BAŞLAT</button>
+    </div>
+
+    <script>
+        function selectCar(id) {
+            document.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+            document.getElementById('car' + id).classList.add('selected');
+            alert('Arac ' + id + ' seçildi!');
+        }
+        function başlat() {
+            alert('Oyun Başlıyor!');
+        }
+    </script>
+</body>
+</html>
